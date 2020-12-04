@@ -1,5 +1,6 @@
 package com.rubypaper;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -8,9 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.rubypaper.domain.Board;
@@ -36,18 +34,36 @@ public class QueryAnnotationTest {
 	}
 	
 	//276 - 위치 기반 파라미터  /  이름 기반 파라미터
+//	@Test
+//	public void testQueryAnnotationTest1() {
+//	    List<Board> boardList = boardRepo.queryAnnotationTest1("테스트 제목 10");
+//	    
+//	    System.out.println("검색 결과");
+//	    for (Board board : boardList) {
+//		System.out.println("---> " + board.toString());
+//	    }
+//	}
+	
+	// 278 - 특정변수만 조회
+//	@Test
+//	public void testQueryAnnotationTest2() {
+//		List<Object[]> boardList = boardRepo.queryAnnotationTest2("테스트 제목 10");
+//
+//		System.out.println("검색 결과");
+//		for (Object[] row : boardList) {
+//			System.out.println("---> " + Arrays.toString(row));
+//		}
+//	}
+	
+	//288 네이티브 쿼리
 	@Test
-	public void testQueryAnnotationTest1() {
-	    List<Board> boardList = boardRepo.queryAnnotationTest1("테스트 제목 10");
-	    
-	    System.out.println("검색 결과");
-	    for (Board board : boardList) {
-		System.out.println("---> " + board.toString());
-	    }
+	public void testQueryAnnotationTest3() {
+		List<Object[]> boardList = boardRepo.queryAnnotationTest3("테스트 제목 10");
+
+		System.out.println("검색 결과");
+		for (Object[] row : boardList) {
+			System.out.println("---> " + Arrays.toString(row));
+		}
 	}
-	
-	// 2
-	
-	
 	
 }
