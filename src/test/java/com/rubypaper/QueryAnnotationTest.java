@@ -57,7 +57,7 @@ public class QueryAnnotationTest {
 //		}
 //	}
 	
-	//288 네이티브 쿼리
+	//280 네이티브 쿼리
 //	@Test
 //	public void testQueryAnnotationTest3() {
 //		List<Object[]> boardList = boardRepo.queryAnnotationTest3("테스트 제목 10");
@@ -68,6 +68,7 @@ public class QueryAnnotationTest {
 //		}
 //	}
 	
+	//282 페이징 및 정렬 처리
 	@Test
 	public void testQueryAnnotationTest4() {
 		Pageable paging = PageRequest.of(0, 3, Sort.Direction.DESC, "seq");
